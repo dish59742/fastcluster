@@ -2,7 +2,7 @@
 
 set -e -x
 
-echo ${TRAVIS_CPU_ARCH}
+echo $arch
 
 # Compile wheels
 for PYBIN in /opt/python/*/bin; do
