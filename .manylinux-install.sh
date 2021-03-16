@@ -2,7 +2,7 @@
 
 set -e -x
 
-echo $arch
+echo $Arch
 
 # Compile wheels
 for PYBIN in /opt/python/*/bin; do
