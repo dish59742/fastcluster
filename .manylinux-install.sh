@@ -2,7 +2,9 @@
 
 set -e -x
 
-echo $Arch
+echo "printing arch"
+echo ${TRAVIS_CPU_ARCH}
+echo "printed arch"
 
 # Compile wheels
 for PYBIN in /opt/python/*/bin; do
