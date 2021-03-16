@@ -3,14 +3,14 @@
 set -e -x
 
 echo "printing arch"
-echo uname -m
+echo "${uname -m}"
 echo "printed arch"
 
 # Compile wheels
 for PYBIN in /opt/python/*/bin; do
-    if [[ "${PYBIN}" == *"cp27"* && (uname -m != "aarch64") ]] || \
-       [[ "${PYBIN}" == *"cp35"* && (uname -m != "aarch64") ]] || \
-       [[ "${PYBIN}" == *"cp36"* && (uname -m != "aarch64") ]] || \
+    if [[ "${PYBIN}" == *"cp27"* && ("${uname -m}" != "aarch64") ]] || \
+       [[ "${PYBIN}" == *"cp35"* && ("${uname -m}" != "aarch64") ]] || \
+       [[ "${PYBIN}" == *"cp36"* && ("${uname -m}" != "aarch64") ]] || \
        [[ "${PYBIN}" == *"cp37"* ]] || \
        [[ "${PYBIN}" == *"cp38"* ]] || \
        [[ "${PYBIN}" == *"cp39"* ]]; then
