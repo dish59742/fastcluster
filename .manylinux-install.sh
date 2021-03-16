@@ -4,8 +4,9 @@ set -e -x
 
 # Compile wheels
 for PYBIN in /opt/python/*/bin; do
-    if [[ "${PYBIN}" == *"cp35"* ]] || \
-       [[ "${PYBIN}" == *"cp36"* ]] || \
+    if [[ "${PYBIN}" == *"cp27"* && ${TRAVIS_CPU_ARCH} != "arm64" ]] || \
+       [[ "${PYBIN}" == *"cp35"* && ${TRAVIS_CPU_ARCH} != "arm64" ]] || \
+       [[ "${PYBIN}" == *"cp36"* && ${TRAVIS_CPU_ARCH} != "arm64" ]] || \
        [[ "${PYBIN}" == *"cp37"* ]] || \
        [[ "${PYBIN}" == *"cp38"* ]] || \
        [[ "${PYBIN}" == *"cp39"* ]]; then
