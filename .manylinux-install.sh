@@ -2,13 +2,13 @@
 
 set -e -x
 
-echo "${TRAVIS_CPU_ARCH}"
+echo ${TRAVIS_CPU_ARCH}
 
 # Compile wheels
 for PYBIN in /opt/python/*/bin; do
-    if [[ "${PYBIN}" == *"cp27"* && "${TRAVIS_CPU_ARCH}" != "arm64" ]] || \
-       [[ "${PYBIN}" == *"cp35"* && "${TRAVIS_CPU_ARCH}" != "arm64" ]] || \
-       [[ "${PYBIN}" == *"cp36"* && "${TRAVIS_CPU_ARCH}" != "arm64" ]] || \
+    if [[ "${PYBIN}" == *"cp27"* && ${TRAVIS_CPU_ARCH} != "arm64" ]] || \
+       [[ "${PYBIN}" == *"cp35"* && ${TRAVIS_CPU_ARCH} != "arm64" ]] || \
+       [[ "${PYBIN}" == *"cp36"* && ${TRAVIS_CPU_ARCH} != "arm64" ]] || \
        [[ "${PYBIN}" == *"cp37"* ]] || \
        [[ "${PYBIN}" == *"cp38"* ]] || \
        [[ "${PYBIN}" == *"cp39"* ]]; then
