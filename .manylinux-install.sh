@@ -3,7 +3,7 @@
 set -e -x
 
 echo "printing arch"
-arch=$(uname -a)
+arch=$(uname -m)
 echo $arch
 echo "printed arch"
 
